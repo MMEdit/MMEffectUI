@@ -28,7 +28,7 @@ namespace MMDUI.Widgets
                 base.ObjectFX = value;
 
                 if (!(ObjectFX is ControlObject))
-                    throw new Exception($"{Name}：无法编辑此对象。");
+                    throw new Exception(string.Format(Properties.Resources.MMDUIWidgetBase_IsNotControlObject, Name));
 
                 ControlObject = (ControlObject)ObjectFX;
 

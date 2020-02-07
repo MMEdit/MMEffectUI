@@ -36,7 +36,7 @@ namespace MMDUI.Widgets
                 base.ObjectFX = value;
 
                 if (!(ObjectFX is MMDUIObjectFX))
-                    throw new Exception($"Widget Proxy: 无法创建小部件，提供的对象不是“{nameof(MMDUIObjectFX)}”。");
+                    throw new Exception(Properties.Resources.WidgetProxy_IsNotMMDUIObjectFX);
 
                 List<ControlObject> controlObjects = new List<ControlObject>((ObjectFX as MMDUIObjectFX).ControlObjects);
                 controlObjects.Reverse();

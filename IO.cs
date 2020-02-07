@@ -39,7 +39,7 @@ namespace MMDUI
         {
             get
             {
-                return "MMDUI Format Import/Export";
+                return Resources.IO_Name;
             }
         }
 
@@ -55,7 +55,7 @@ namespace MMDUI
         {
             get
             {
-                return "提供 MMDUI 格式的 MME 文件的导入/导出程序。\r\n支持的类型：int / float / float2 / float3 / float4";
+                return Resources.IO_Description;
             }
         }
 
@@ -63,7 +63,7 @@ namespace MMDUI
         {
             get
             {
-                return "MMDUI File";
+                return Resources.IO_Caption;
             }
         }
 
@@ -155,7 +155,7 @@ namespace MMDUI
         public ObjectFX Import(string path)
         {
             if (!IsImportable(path))
-                throw new Exception($"{Name}：\r\n无法导入此文件，因为它不是 MMDUI 格式。");
+                throw new Exception(Resources.IO_FormatException);
 
             MMDUIObjectFX fx = new MMDUIObjectFX
             {

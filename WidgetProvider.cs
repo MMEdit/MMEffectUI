@@ -20,7 +20,7 @@ namespace MMDUI
         {
             get
             {
-                return "MMDUI Widget Provider";
+                return Properties.Resources.WidgetProvider_Name;
             }
         }
 
@@ -36,7 +36,7 @@ namespace MMDUI
         {
             get
             {
-                return "提供基本的 MMDUI 小部件。\r\n小部件：Color / Numeric / Slider / Spinner / *MMDUI.Widgets.WidgetProxy";
+                return Properties.Resources.WidgetProvider_Description;
             }
         }
 

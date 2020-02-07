@@ -22,7 +22,7 @@ namespace MMDUI
         {
             get
             {
-                return "MMDUI Menu";
+                return Resources.Menu_Name;
             }
         }
 
@@ -50,7 +50,6 @@ namespace MMDUI
                 ToolStripSeparator separator_1 = new ToolStripSeparator();
                 ToolStripMenuItem menuItem_MMDUI_About = new ToolStripMenuItem();
 
-                menuStrip.SuspendLayout();
                 menuStrip.Items.Insert(menuStrip.Items.Count - 1, menuItem_MMDUI);
 
                 menuItem_MMDUI.DropDownItems.AddRange(new ToolStripItem[]
@@ -60,8 +59,8 @@ namespace MMDUI
                     menuItem_MMDUI_About,
                 });
                 menuItem_MMDUI.Name = "menuItem_MMDUI";
-                menuItem_MMDUI.Text = "MMDUI(&M)";
-                menuItem_MMDUI.Visible = false;
+                menuItem_MMDUI.Text = Resources.Menu_menuItem_MMDUI;
+                //menuItem_MMDUI.Visible = false;
 
                 menuItem_Encoding.DropDownItems.AddRange(new ToolStripItem[]
                 {
@@ -70,25 +69,25 @@ namespace MMDUI
                     menuItem_Encoding_Shift_JIS,
                 });
                 menuItem_Encoding.Name = "menuItem_Encoding";
-                menuItem_Encoding.Text = "编码";
+                menuItem_Encoding.Text = Resources.Menu_menuItem_Encoding;
 
                 menuItem_Encoding_ANSI.Name = "menuItem_Encoding_ANSI";
-                menuItem_Encoding_ANSI.Text = "使用 ANSI 编码";
+                menuItem_Encoding_ANSI.Text = Resources.Menu_menuItem_Encoding_ANSI;
                 menuItem_Encoding_ANSI.Tag = Encoding.Default.WebName;
                 menuItem_Encoding_ANSI.Click += MenuItem_Encoding_DropDownItems_Click;
 
                 menuItem_Encoding_UTF_8.Name = "menuItem_Encoding_UTF_8";
-                menuItem_Encoding_UTF_8.Text = "使用 UTF-8 编码";
+                menuItem_Encoding_UTF_8.Text = Resources.Menu_menuItem_Encoding_UTF_8;
                 menuItem_Encoding_UTF_8.Tag = Encoding.UTF8.WebName;
                 menuItem_Encoding_UTF_8.Click += MenuItem_Encoding_DropDownItems_Click;
 
                 menuItem_Encoding_Shift_JIS.Name = "menuItem_Encoding_Shift_JIS";
-                menuItem_Encoding_Shift_JIS.Text = "使用 Shift-JIS 编码";
+                menuItem_Encoding_Shift_JIS.Text = Resources.Menu_menuItem_Encoding_Shift_JIS;
                 menuItem_Encoding_Shift_JIS.Tag = Encoding.GetEncoding("shift-jis").WebName;
                 menuItem_Encoding_Shift_JIS.Click += MenuItem_Encoding_DropDownItems_Click;
 
                 menuItem_MMDUI_About.Name = "menuItem_MMDUI_About";
-                menuItem_MMDUI_About.Text = "关于 MMDUI(&A)";
+                menuItem_MMDUI_About.Text = Resources.Menu_menuItem_MMDUI_About;
                 menuItem_MMDUI_About.Click += MenuItem_MMDUI_About_Click;
 
                 foreach (ToolStripMenuItem item in menuItem_Encoding.DropDownItems)
@@ -98,8 +97,6 @@ namespace MMDUI
                         item.Checked = true;
                     }
                 }
-
-                menuStrip.ResumeLayout();
 
                 void MenuItem_Encoding_DropDownItems_Click(object sender, EventArgs e)
                 {
@@ -117,11 +114,11 @@ namespace MMDUI
                     host.MainForm.RefreshFX();
                 }
 
-                host.FileStatusChanged += (sender, e) =>
-                {
-                    if (e.Status == FileStatus.Opened)
-                        menuItem_MMDUI.Visible = host.MainForm.Importer.Guid == new Guid("{2461F59A-09EA-49B5-9A8E-37588AABDC9B}");
-                };
+                //host.FileStatusChanged += (sender, e) =>
+                //{
+                //    if (e.Status == FileStatus.Opened)
+                //        menuItem_MMDUI.Visible = host.MainForm.Importer.Guid == new Guid("{2461F59A-09EA-49B5-9A8E-37588AABDC9B}");
+                //};
 
                 flag = true;
             }
@@ -129,8 +126,8 @@ namespace MMDUI
 
         private void MenuItem_MMDUI_About_Click(object sender, EventArgs e)
         {
-            string text = $"{AssemblyProduct}\n{string.Format("版本 {0}", AssemblyVersion)}\n{AssemblyCopyright}\n\n{AssemblyDescription}";
-            MessageBox.Show(text, "关于 MMDUI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string text = $"{AssemblyProduct}\n{string.Format("Version {0}", AssemblyVersion)}\n{AssemblyCopyright}\n\n{AssemblyDescription}";
+            MessageBox.Show(text, $"{Resources.About} MMDUI", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 

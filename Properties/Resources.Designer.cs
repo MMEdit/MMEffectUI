@@ -61,6 +61,15 @@ namespace MMDUI.Properties {
         }
         
         /// <summary>
+        ///   查找类似 关于 的本地化字符串。
+        /// </summary>
+        internal static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap color {
@@ -127,6 +136,114 @@ namespace MMDUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("function", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MMDUI 文件 的本地化字符串。
+        /// </summary>
+        internal static string IO_Caption {
+            get {
+                return ResourceManager.GetString("IO.Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 提供 MMDUI 格式的 MME 文件的导入/导出程序。\r\n支持的类型：int / float / float2 / float3 / float4 的本地化字符串。
+        /// </summary>
+        internal static string IO_Description {
+            get {
+                return ResourceManager.GetString("IO.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 无法导入“{1}”，因为它不是 MMDUI 格式。 的本地化字符串。
+        /// </summary>
+        internal static string IO_FormatException {
+            get {
+                return ResourceManager.GetString("IO.FormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MMDUI Format Import/Export 的本地化字符串。
+        /// </summary>
+        internal static string IO_Name {
+            get {
+                return ResourceManager.GetString("IO.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 编码(&amp;E) 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_Encoding {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_Encoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 使用 &amp;ANSI 编码 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_Encoding_ANSI {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_Encoding_ANSI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 使用 &amp;Shift-JIS 编码 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_Encoding_Shift_JIS {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_Encoding_Shift_JIS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 使用 &amp;UTF-8 编码 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_Encoding_UTF_8 {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_Encoding_UTF_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MMDUI(&amp;M) 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_MMDUI {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_MMDUI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 关于 MMDUI(&amp;A) 的本地化字符串。
+        /// </summary>
+        internal static string Menu_menuItem_MMDUI_About {
+            get {
+                return ResourceManager.GetString("Menu.menuItem_MMDUI_About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MMDUI Menu 的本地化字符串。
+        /// </summary>
+        internal static string Menu_Name {
+            get {
+                return ResourceManager.GetString("Menu.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0}：无法编辑此对象。 的本地化字符串。
+        /// </summary>
+        internal static string MMDUIWidgetBase_IsNotControlObject {
+            get {
+                return ResourceManager.GetString("MMDUIWidgetBase.IsNotControlObject", resourceCulture);
             }
         }
         
@@ -237,6 +354,42 @@ namespace MMDUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("ui_spin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 版本 的本地化字符串。
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 提供基本的 MMDUI 小部件。\r\n小部件：Color / Numeric / Slider / Spinner 的本地化字符串。
+        /// </summary>
+        internal static string WidgetProvider_Description {
+            get {
+                return ResourceManager.GetString("WidgetProvider.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Widget Provider 的本地化字符串。
+        /// </summary>
+        internal static string WidgetProvider_Name {
+            get {
+                return ResourceManager.GetString("WidgetProvider.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Widget Proxy: 无法创建小部件，提供的对象不是“MMDUIObjectFX”。 的本地化字符串。
+        /// </summary>
+        internal static string WidgetProxy_IsNotMMDUIObjectFX {
+            get {
+                return ResourceManager.GetString("WidgetProxy.IsNotMMDUIObjectFX", resourceCulture);
             }
         }
     }
