@@ -2,7 +2,7 @@
 
 <a href="https://github.com/MMEdit/MMDUI/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/MMEdit/MMDUI/total?style=flat-square"/></a> <a href="https://github.com/nicengi/MMEdit/releases"><img alt="Downloads@MMEdit" src="https://img.shields.io/github/downloads/nicengi/MMEdit/total?label=downloads%40MMEdit&style=flat-square"/></a> <a href="https://github.com/MMEdit/MMDUI/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/MMEdit/MMDUI?color=39c5bb&style=flat-square"></a>
 
-一个 [MMEdit](https://github.com/nicengi/MMEdit) 插件，提供 MMDUI 格式的 [MME](https://bowlroll.net/file/35012)文件的导入、导出和小部件。
+一个 [MMEdit](https://github.com/nicengi/MMEdit) 插件，提供 MMDUI 格式的 [MME](https://bowlroll.net/file/35012) 文件的导入、导出和小部件。
 
 ## 使用说明
 
