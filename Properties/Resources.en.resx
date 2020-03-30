@@ -117,55 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
+  <data name="MMEffectUI.Caption" xml:space="preserve">
+    <value>Effect File</value>
   </data>
-  <data name="IO.Caption" xml:space="preserve">
-    <value>MMDUI File</value>
+  <data name="MMEffectUI.Name" xml:space="preserve">
+    <value>MMEffect UI</value>
   </data>
-  <data name="IO.Description" xml:space="preserve">
-    <value>Provides import / export program for MME files in MMDUI format. \ r \ nSupported types: int / float / float2 / float3 / float4</value>
+  <data name="Msg.FormatException" xml:space="preserve">
+    <value>Cannot import '{1}'.</value>
   </data>
-  <data name="IO.FormatException" xml:space="preserve">
-    <value>Cannot import "{1}" because it is not in MMDUI format.</value>
+  <data name="Msg.IsNotControlObject" xml:space="preserve">
+    <value>'{0}' cannot edit this object.</value>
   </data>
-  <data name="IO.Name" xml:space="preserve">
-    <value>MMDUI Format Import/Export</value>
+  <data name="Msg.IsNotUIObjectFX" xml:space="preserve">
+    <value>object is not '{0}'.</value>
   </data>
-  <data name="Menu.menuItem_Encoding" xml:space="preserve">
-    <value>&amp;Encoding</value>
-  </data>
-  <data name="Menu.menuItem_Encoding_ANSI" xml:space="preserve">
-    <value>&amp;ANSI</value>
-  </data>
-  <data name="Menu.menuItem_Encoding_Shift_JIS" xml:space="preserve">
-    <value>&amp;Shift-JIS</value>
-  </data>
-  <data name="Menu.menuItem_Encoding_UTF_8" xml:space="preserve">
-    <value>&amp;UTF-8</value>
-  </data>
-  <data name="Menu.menuItem_MMDUI" xml:space="preserve">
-    <value>&amp;MMDUI</value>
-  </data>
-  <data name="Menu.menuItem_MMDUI_About" xml:space="preserve">
-    <value>&amp;About MMDUI</value>
-  </data>
-  <data name="Menu.Name" xml:space="preserve">
-    <value>MMDUI Menu</value>
-  </data>
-  <data name="MMDUIWidgetBase.IsNotControlObject" xml:space="preserve">
-    <value>{0}: This object cannot be edited.</value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>Version</value>
-  </data>
-  <data name="WidgetProvider.Description" xml:space="preserve">
-    <value>Provides basic MMDUI widgets. \r\nWidget: Color / Numeric / Slider / Spinner</value>
-  </data>
-  <data name="WidgetProvider.Name" xml:space="preserve">
-    <value>Widget Provider</value>
-  </data>
-  <data name="WidgetProxy.IsNotMMDUIObjectFX" xml:space="preserve">
-    <value>Widget Proxy: Unable to create widget, provided object is not 'MMDUIObjectFX'.</value>
+  <data name="Msg.WidgetNotFound" xml:space="preserve">
+    <value>'{0}' not found.</value>
   </data>
 </root>

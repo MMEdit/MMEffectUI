@@ -7,8 +7,8 @@
     <ProjectGuid>{3771D3DB-C587-4994-B30A-B09A24C94C9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MMDUI</RootNamespace>
-    <AssemblyName>MMDUI</AssemblyName>
+    <RootNamespace>MMEffectUI</RootNamespace>
+    <AssemblyName>MMEffectUI</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>false</Deterministic>
@@ -48,9 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IO.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MMDUIObjectFX.cs" />
+    <Compile Include="ControlObject.cs" />
+    <Compile Include="MMEffectUI.cs" />
+    <Compile Include="UIObjectFX.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -62,7 +62,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="WidgetProvider.cs" />
     <Compile Include="Widgets\NumericWidget.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,7 +74,7 @@
     <Compile Include="Widgets\SliderWidget.Designer.cs">
       <DependentUpon>SliderWidget.cs</DependentUpon>
     </Compile>
-    <Compile Include="Widgets\MMDUIWidgetBase.cs">
+    <Compile Include="Widgets\UIWidgetBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Widgets\WidgetProxy.cs">
@@ -88,7 +87,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+    <EmbeddedResource Include="Properties\Resources.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Widgets\NumericWidget.resx">
@@ -109,12 +108,6 @@
     <None Include="Resources\Images\function.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\color-adjustment-green.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\color-adjustment-red.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\color-swatch.png" />
   </ItemGroup>
   <ItemGroup>
@@ -124,40 +117,10 @@
     <None Include="Resources\Images\ui-color-picker.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\ui-color-picker-default.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Images\ui-color-picker-transparent.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Images\color.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\color-adjustment.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-label.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider-050.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider-vertical.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider-vertical-050.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-slider-vertical-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Images\ui-spin.png" />
+    <None Include="Resources\Images\mme.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

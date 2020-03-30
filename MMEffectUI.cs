@@ -1,6 +1,6 @@
-﻿using MMDUI.Properties;
+﻿using MMEffectUI.Properties;
+using MMEffectUI.Widgets;
 using MMEdit;
-using MMEdit.Fx;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,9 +9,9 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace MMDUI
+namespace MMEffectUI
 {
-    public class IO : PluginClass, IImportPlugin, IExportPlugin
+    public class MMEffectUI : PluginBase, IImportPlugin, IExportPlugin
     {
         #region Fields
         public Encoding Encoding;
@@ -19,10 +19,16 @@ namespace MMDUI
         #endregion
 
         #region Constructor
-        public IO()
+        public MMEffectUI()
         {
             Encoding = Encoding.GetEncoding(Settings.Default.Encoding);
-            Settings.Default.PropertyChanged += Default_PropertyChanged;
+            Settings.Default.PropertyChanged += (s, e) =>
+            {
+                if (e.PropertyName == "Encoding")
+                {
+                    Encoding = Encoding.GetEncoding(Settings.Default.Encoding);
+                }
+            };
         }
         #endregion
 
@@ -39,7 +45,7 @@ namespace MMDUI
         {
             get
             {
-                return Resources.IO_Name;
+                return Resources.MMEffectUI_Name;
             }
         }
 
@@ -47,15 +53,7 @@ namespace MMDUI
         {
             get
             {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
-
-        public override string Description
-        {
-            get
-            {
-                return Resources.IO_Description;
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString(2);
             }
         }
 
@@ -63,7 +61,7 @@ namespace MMDUI
         {
             get
             {
-                return Resources.IO_Caption;
+                return Resources.MMEffectUI_Caption;
             }
         }
 
@@ -79,21 +77,33 @@ namespace MMDUI
         {
             get
             {
-                return Resources.function;
+                return Resources.mme;
             }
         }
         #endregion
 
         #region Methods
+        public override void Initialize(IHost host)
+        {
+            base.Initialize(host);
+            Host.RegisterWidgets(new IWidget[]
+            {
+                new WidgetClass("MMEffectUI", obj => new WidgetProxy(obj, Host)),
+                new WidgetClass("Color", obj => new SliderWidget(true) { ObjectFX = obj }),
+                new WidgetClass("Slider", obj => new SliderWidget { ObjectFX = obj }),
+                new WidgetClass("Numeric", obj => new NumericWidget { ObjectFX = obj }),
+                new WidgetClass("Spinner", obj => new NumericWidget { ObjectFX = obj }),
+            });
+        }
+
         public bool IsExportable(ObjectFX obj)
         {
-            return obj is MMDUIObjectFX;
+            return obj is UIObjectFX;
         }
 
         public void Export(ObjectFX obj, string path)
         {
-            MMDUIObjectFX fx = (MMDUIObjectFX)obj;
-
+            UIObjectFX fx = (UIObjectFX)obj;
             string originalText = fx.OriginalText;
             List<int> indexList = new List<int>();
 
@@ -121,7 +131,6 @@ namespace MMDUI
                     }
                 }
             }
-
             File.WriteAllText(path, originalText, Encoding);
         }
 
@@ -132,13 +141,11 @@ namespace MMDUI
                 $"{(controlObject.IsConst ? "const " : "")}" +
                 $"{controlObject.Type} {controlObject.Name} <";
 
-            foreach (Annotation annotation in controlObject.Annotations)
+            foreach (Annotation annotation in controlObject.ControlObjects)
             {
                 data += Environment.NewLine + $"\t{annotation.Type} {annotation.Name} = {(annotation.Type == "string" ? $"\"{annotation.Value}\"" : annotation.Value)};";
             }
-
             data += $"{Environment.NewLine}> = {controlObject.Value};";
-
             return data;
         }
 
@@ -155,15 +162,18 @@ namespace MMDUI
         public ObjectFX Import(string path)
         {
             if (!IsImportable(path))
-                throw new Exception(Resources.IO_FormatException);
+                throw new Exception(Resources.Msg_FormatException);
 
-            MMDUIObjectFX fx = new MMDUIObjectFX
+            UIObjectFX obj = new UIObjectFX("MMEffectUI")
             {
-                WidgetID = "MMDUI.Widgets.WidgetProxy",
                 OriginalText = File.ReadAllText(path, Encoding),
             };
 
-            foreach (Match match in regex.Matches(fx.OriginalText))
+            obj.Data.Add("IMPORTPLUGIN", Name);
+            obj.Data.Add("IMPORTPLUGIN_VERSION", Version);
+            obj.Data.Add("IMPORTPLUGIN_GUID", Guid);
+
+            foreach (Match match in regex.Matches(obj.OriginalText))
             {
                 ControlObject controlObject = new ControlObject()
                 {
@@ -174,14 +184,14 @@ namespace MMDUI
 
                 for (int i = 0; i < match.Groups["a_type"].Captures.Count; i++)
                 {
-                    Annotation annotation = new Annotation()
+                    ControlObject co = new ControlObject()
                     {
                         Type = match.Groups["a_type"].Captures[i].Value,
                         Name = match.Groups["a_name"].Captures[i].Value,
                         Value = match.Groups["a_value"].Captures[i].Value.Replace("\"", ""),
                     };
 
-                    controlObject.Annotations.Add(annotation);
+                    controlObject.ControlObjects.Add(co);
                 }
 
                 controlObject.IsStatic = match.Groups["static"].Success;
@@ -189,18 +199,10 @@ namespace MMDUI
                 controlObject._Index = match.Index;
                 controlObject._Length = match.Length;
 
-                fx.ControlObjects.Add(controlObject);
+                obj.ControlObjects.Add(controlObject);
             }
 
-            return fx;
-        }
-
-        private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == "Encoding")
-            {
-                Encoding = Encoding.GetEncoding(Settings.Default.Encoding);
-            }
+            return obj;
         }
         #endregion
     }

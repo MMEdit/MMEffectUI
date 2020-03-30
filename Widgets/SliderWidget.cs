@@ -1,13 +1,12 @@
-﻿using MMDUI.Properties;
-using MMEdit.Fx;
+﻿using MMEffectUI.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace MMDUI.Widgets
+namespace MMEffectUI.Widgets
 {
-    public partial class SliderWidget : MMDUIWidgetBaseN
+    public partial class SliderWidget : UIWidgetBaseV
     {
         #region Fields
         private bool folded;
@@ -71,10 +70,10 @@ namespace MMDUI.Widgets
 
             Fold();
 
-            labelUIName.Image = IsColor ? Resources.color_swatches : Resources.ui_slider_050;
-            labelUIName.Text = $"{ControlObject.GetAnnotation("UIName")?.Value ?? ControlObject.Name}";
+            labelUIName.Image = IsColor ? Resources.color_swatch : null;
+            labelUIName.Text = $"{ControlObject.GetControlObject("UIName")?.Value ?? ControlObject.Name}";
             labelUIName.Update();
-            toolTip.SetToolTip(labelUIName, ControlObject.GetAnnotation("UIHelp")?.Value);
+            toolTip.SetToolTip(labelUIName, ControlObject.GetControlObject("UIHelp")?.Value);
 
             trackX.Maximum = IsColor ? 100 : (int)(Convert.ToSingle(UIMaxX) * 100f);
             trackY.Maximum = IsColor ? 100 : (int)(Convert.ToSingle(UIMaxY) * 100f);

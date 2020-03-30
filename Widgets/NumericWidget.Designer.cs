@@ -1,4 +1,4 @@
-﻿namespace MMDUI.Widgets
+﻿namespace MMEffectUI.Widgets
 {
     partial class NumericWidget
     {
@@ -70,10 +70,10 @@
             this.labelUIName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tableLayoutPanel.SetColumnSpan(this.labelUIName, 4);
             this.labelUIName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelUIName.Image = global::MMDUI.Properties.Resources.ui_spin;
             this.labelUIName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelUIName.Location = new System.Drawing.Point(3, 0);
             this.labelUIName.Name = "labelUIName";
+            this.labelUIName.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.labelUIName.Size = new System.Drawing.Size(1368, 20);
             this.labelUIName.TabIndex = 1;
             this.labelUIName.Text = "UIName";

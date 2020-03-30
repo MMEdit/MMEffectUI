@@ -1,13 +1,17 @@
 ﻿using MMEdit;
-using MMEdit.Fx;
 using System.Collections.Generic;
 
-namespace MMDUI
+namespace MMEffectUI
 {
-    public class MMDUIObjectFX : ObjectFX
+    public class UIObjectFX : ObjectFX
     {
         #region Constructor
-        public MMDUIObjectFX()
+        public UIObjectFX() : this(null)
+        {
+
+        }
+
+        public UIObjectFX(string widgetID) : base(widgetID)
         {
             ControlObjects = new List<ControlObject>();
         }

@@ -1,4 +1,4 @@
-﻿namespace MMDUI.Widgets
+﻿namespace MMEffectUI.Widgets
 {
     partial class SliderWidget
     {
@@ -167,6 +167,7 @@
             this.labelUIName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelUIName.Location = new System.Drawing.Point(3, 0);
             this.labelUIName.Name = "labelUIName";
+            this.labelUIName.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.labelUIName.Size = new System.Drawing.Size(1368, 20);
             this.labelUIName.TabIndex = 0;
             this.labelUIName.Text = "UIName";

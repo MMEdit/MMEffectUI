@@ -1,0 +1,931 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MMEdit.Framework</name>
+    </assembly>
+    <members>
+        <member name="T:MMEdit.Configuration.CustomSettingsBase">
+            <summary>
+            定义自定义设置的基类。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.CustomSettingsBase.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.Configuration.CustomSettingsBase"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.CustomSettingsBase.Text">
+            <summary>
+            获取或设置标签文本。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.CustomSettingsBase.Settings">
+            <summary>
+            获取子设置集合。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.CustomSettingsBase.Save">
+            <summary>
+            存储设置属性的当前值。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.CustomSettingsBase.SaveSettings">
+            <summary>
+            <see cref="P:MMEdit.Configuration.CustomSettingsBase.Settings"/> <inheritdoc cref="M:MMEdit.Configuration.CustomSettingsBase.Save"/>
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.CustomSettingsBase.CreateControl">
+            <summary>
+            创建控件。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.Configuration.ExtensionRule">
+            <summary>
+            定义扩展名导入规则。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.ExtensionRule.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.Configuration.ExtensionRule"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.ExtensionRule.#ctor(System.String,System.Guid)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.Configuration.ExtensionRule.#ctor"/>
+            </summary>
+            <param name="extension"></param>
+            <param name="importerGuid"></param>
+        </member>
+        <member name="P:MMEdit.Configuration.ExtensionRule.Extension">
+            <summary>
+            获取或设置扩展名。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.ExtensionRule.ImporterGuid">
+            <summary>
+            获取或设置导入程序 GUID。
+            </summary>
+        </member>
+        <member name="T:MMEdit.Configuration.ICustomSettings">
+            <summary>
+            定义自定义设置。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.ICustomSettings.Text">
+            <summary>
+            获取标签文本。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.ICustomSettings.Settings">
+            <summary>
+            获取子设置集合。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.ICustomSettings.Save">
+            <summary>
+            存储设置属性的当前值。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.ICustomSettings.CreateControl">
+            <summary>
+            创建控件。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.Configuration.ImportConfig">
+            <summary>
+            表示导入配置。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.ImportConfig.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.Configuration.ImportConfig"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.ImportConfig.ExtensionRules">
+            <summary>
+            获取扩展名规则集合。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.ImportConfig.ImageConfigPath">
+            <summary>
+            获取导入配置文件的路径。
+            </summary>
+        </member>
+        <member name="T:MMEdit.Configuration.History">
+            <summary>
+            表示历史项目。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.History.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.Configuration.History"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Configuration.History.#ctor(System.String,System.Guid)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.Configuration.History.#ctor"/>
+            </summary>
+            <param name="fileName">文件名。</param>
+            <param name="importerGuid">导入程序 GUID。</param>
+        </member>
+        <member name="M:MMEdit.Configuration.History.#ctor(System.String,System.Guid,System.Drawing.Image)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.Configuration.History.#ctor"/>
+            </summary>
+            <param name="fileName">文件名。</param>
+            <param name="importerGuid">导入程序 GUID。</param>
+            <param name="image">图像。</param>
+        </member>
+        <member name="M:MMEdit.Configuration.History.#ctor(System.String,System.Guid,System.Drawing.Image,System.DateTime)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.Configuration.History.#ctor"/>
+            </summary>
+            <param name="fileName">文件名。</param>
+            <param name="importerGuid">导入程序 GUID。</param>
+            <param name="image">图像。</param>
+            <param name="dateTime">日期时间。</param>
+        </member>
+        <member name="P:MMEdit.Configuration.History.Name">
+            <summary>
+            获取文件的名称。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.History.FullName">
+            <summary>
+            获取或设置文件的完整名称。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.History.ImporterGuid">
+            <summary>
+            获取或设置导入程序 GUID。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.History.Image">
+            <summary>
+            获取或设置图像。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.History.DateTime">
+            <summary>
+            获取日期时间。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Configuration.History.HistoryCachePath">
+            <summary>
+            获取历史缓存文件的路径。
+            </summary>
+        </member>
+        <member name="T:MMEdit.FileStatus">
+            <summary>
+            表示文件状态。
+            </summary>
+        </member>
+        <member name="F:MMEdit.FileStatus.Opened">
+            <summary>
+            表示文件被打开。
+            </summary>
+        </member>
+        <member name="F:MMEdit.FileStatus.Changed">
+            <summary>
+            表示文件被修改。
+            </summary>
+        </member>
+        <member name="F:MMEdit.FileStatus.Saved">
+            <summary>
+            表示文件被保存。
+            </summary>
+        </member>
+        <member name="F:MMEdit.FileStatus.Reloaded">
+            <summary>
+            表示文件被重新加载。
+            </summary>
+        </member>
+        <member name="F:MMEdit.FileStatus.Closed">
+            <summary>
+            表示文件被关闭。
+            </summary>
+        </member>
+        <member name="T:MMEdit.FileStatusEventArgs">
+            <summary>
+            为文件状态事件提供数据。
+            </summary>
+        </member>
+        <member name="M:MMEdit.FileStatusEventArgs.#ctor(MMEdit.FileStatus)">
+            <summary>
+            初始化 <see cref="T:MMEdit.FileStatusEventArgs"/> 类的新实例。
+            </summary>
+            <param name="status">文件状态。</param>
+        </member>
+        <member name="P:MMEdit.FileStatusEventArgs.Status">
+            <summary>
+            获取文件状态。
+            </summary>
+        </member>
+        <member name="T:MMEdit.Annotation">
+            <summary>
+            定义可编辑对象注解。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Annotation.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.Annotation"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Annotation.#ctor(System.String,System.String,System.Object)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.Annotation.#ctor"/>
+            </summary>
+            <param name="type">类型。</param>
+            <param name="name">名称。</param>
+            <param name="value">值。</param>
+        </member>
+        <member name="P:MMEdit.Annotation.Type">
+            <summary>
+            获取或设置注解的类型。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Annotation.Name">
+            <summary>
+            获取或设置注解的名称。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Annotation.Value">
+            <summary>
+            获取或设置注解的值。
+            </summary>
+        </member>
+        <member name="E:MMEdit.Annotation.PropertyChanged">
+            <summary>
+            <inheritdoc cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged"/>
+            </summary>
+        </member>
+        <member name="M:MMEdit.Annotation.OnPropertyChanged(System.String)">
+            <summary>
+            引发 <see cref="E:MMEdit.Annotation.PropertyChanged"/> 事件。
+            </summary>
+        </member>
+        <member name="M:MMEdit.Annotation.ToString">
+            <summary>
+            <inheritdoc cref="M:System.Object.ToString"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.Annotation.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            <inheritdoc cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)"/>
+            </summary>
+            <param name="format"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.IExportPlugin">
+            <summary>
+            提供 <see cref="T:MMEdit.ObjectFX"/> 的导出程序。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IExportPlugin.Caption">
+            <summary>
+            获取文件说明。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IExportPlugin.Pattern">
+            <summary>
+            获取文件名筛选模式。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IExportPlugin.Image">
+            <summary>
+            获取文件图标。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IExportPlugin.IsExportable(MMEdit.ObjectFX)">
+            <summary>
+            确定 <see cref="T:MMEdit.ObjectFX"/> 是可以导出。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IExportPlugin.Export(MMEdit.ObjectFX,System.String)">
+            <summary>
+            导出 <see cref="T:MMEdit.ObjectFX"/>。
+            </summary>
+            <param name="obj">可编辑对象。</param>
+            <param name="path">文件路径。</param>
+        </member>
+        <member name="T:MMEdit.IHost">
+            <summary>
+            表示插件宿主。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.MainForm">
+            <summary>
+            获取主窗体。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.Plugins">
+            <summary>
+            获取已加载的插件列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.ImportPlugins">
+            <summary>
+            获取导入插件列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.ExportPlugins">
+            <summary>
+            获取导出插件列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.StartPlugins">
+            <summary>
+            获取启动插件列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.Widgets">
+            <summary>
+            获取已注册的小部件列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.Settings">
+            <summary>
+            获取已注册的设置列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.Histories">
+            <summary>
+            获取历史项目列表。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IHost.ImportConfig">
+            <summary>
+            获取导入配置。
+            </summary>
+        </member>
+        <member name="E:MMEdit.IHost.PluginLoaded">
+            <summary>
+            在加载 <see cref="T:MMEdit.IPlugin"/> 时发生。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IHost.CreateWidget(MMEdit.ObjectFX)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)"/>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.CreateWidget``1(MMEdit.ObjectFX)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)"/>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.CreateWidget(System.String,MMEdit.ObjectFX)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)"/>
+            </summary>
+            <param name="widgetID">小部件 ID。</param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.CreateWidget``1(System.String,MMEdit.ObjectFX)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)"/>
+            </summary>
+            <param name="widgetID">小部件 ID。</param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.RegisterWidget(MMEdit.IWidget)">
+            <summary>
+            注册小部件，如果已有相同的 WidgetID 将被替换。
+            </summary>
+            <param name="widget">小部件信息。</param>
+        </member>
+        <member name="M:MMEdit.IHost.RegisterWidget(System.String,System.Func{MMEdit.ObjectFX,MMEdit.IWidgetControl})">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.RegisterWidget(MMEdit.IWidget)"/>
+            </summary>
+            <param name="widgetID"></param>
+            <param name="createFunc"></param>
+        </member>
+        <member name="M:MMEdit.IHost.RegisterWidgets(MMEdit.IWidget[])">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.RegisterWidget(MMEdit.IWidget)"/>
+            </summary>
+            <param name="widgets">小部件信息集合。</param>
+        </member>
+        <member name="M:MMEdit.IHost.GetPlugin(System.Guid)">
+            <summary>
+            使用 GUID 查找插件。
+            </summary>
+            <param name="guid">要查找的 GUID。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.GetPlugin(System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.GetPlugin(System.Guid)"/>
+            </summary>
+            <param name="guid">要查找的 GUID。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.GetPlugin``1(System.Guid)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.GetPlugin(System.Guid)"/>
+            </summary>
+            <typeparam name="T">要转换的类型。</typeparam>
+            <param name="guid">要查找的 GUID。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.GetPlugin``1(System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.GetPlugin(System.Guid)"/>
+            </summary>
+            <typeparam name="T">要转换的类型。</typeparam>
+            <param name="guid">要查找的 GUID。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.GetPluginDataPath(MMEdit.IPlugin)">
+            <summary>
+            获取用户的插件数据的路径。
+            </summary>
+            <param name="plugin">插件。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IHost.OpenEdit(System.String,System.Boolean)">
+            <summary>
+            从文件打开编辑。
+            </summary>
+            <param name="fileName">文件名。</param>
+            <param name="applyRules">应用扩展名导入规则。</param>
+        </member>
+        <member name="M:MMEdit.IHost.OpenEdit(MMEdit.Configuration.History)">
+            <summary>
+            从历史记录打开编辑。
+            </summary>
+            <param name="history"></param>
+        </member>
+        <member name="M:MMEdit.IHost.OpenEdit(MMEdit.IImportPlugin,System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHost.OpenEdit(System.String,System.Boolean)"/>
+            </summary>
+            <param name="importer">导入程序。</param>
+            <param name="fileName">文件名。</param>
+        </member>
+        <member name="M:MMEdit.IHost.RegisterSettings(MMEdit.Configuration.ICustomSettings)">
+            <summary>
+            注册设置。
+            </summary>
+            <param name="settings">自定义设置。</param>
+        </member>
+        <member name="M:MMEdit.IHost.InsertHistory(MMEdit.Configuration.History,System.Int32)">
+            <summary>
+            将 <see cref="T:MMEdit.Configuration.History"/> 插入到历史列表的指定索引处。
+            </summary>
+            <param name="history">历史项目。</param>
+            <param name="index">索引。</param>
+        </member>
+        <member name="T:MMEdit.IHostConncet">
+            <summary>
+            获取与插件宿主的连接。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IHostConncet.Initialize(MMEdit.IHost)">
+            <summary>
+            与插件宿主连接。
+            </summary>
+            <param name="host">插件宿主。</param>
+        </member>
+        <member name="T:MMEdit.IImportPlugin">
+            <summary>
+            提供 <see cref="T:MMEdit.ObjectFX"/> 的导入程序。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IImportPlugin.Caption">
+            <summary>
+            获取文件说明。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IImportPlugin.Pattern">
+            <summary>
+            获取文件名筛选模式。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IImportPlugin.Image">
+            <summary>
+            获取文件图标。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IImportPlugin.IsImportable(System.String)">
+            <summary>
+            确定文件可以导入。
+            </summary>
+            <param name="path">文件路径。</param>
+            <returns></returns>
+        </member>
+        <member name="M:MMEdit.IImportPlugin.Import(System.String)">
+            <summary>
+            导入 <see cref="T:MMEdit.ObjectFX"/>。
+            </summary>
+            <param name="path">文件路径。</param>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.INotifyStatusChanged">
+            <summary>
+            通知状态改变。
+            </summary>
+        </member>
+        <member name="E:MMEdit.INotifyStatusChanged.StatusChanged">
+            <summary>
+            在状态改变时发生。
+            </summary>
+        </member>
+        <member name="M:MMEdit.INotifyStatusChanged.OnStatusChanged(MMEdit.FileStatus)">
+            <summary>
+            引发 <see cref="E:MMEdit.INotifyStatusChanged.StatusChanged"/> 事件。
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="T:MMEdit.IPlugin">
+            <summary>
+            表示通用插件接口。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IPlugin.Guid">
+            <summary>
+            获取插件的 GUID。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IPlugin.Name">
+            <summary>
+            获取插件的名称。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IPlugin.Version">
+            <summary>
+            获取插件的版本。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IPlugin.Description">
+            <summary>
+            获取插件的描述。
+            </summary>
+        </member>
+        <member name="T:MMEdit.PluginBase">
+            <summary>
+            定义插件的抽象基类。
+            </summary>
+        </member>
+        <member name="P:MMEdit.PluginBase.Guid">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IPlugin.Guid"/>
+            </summary>
+        </member>
+        <member name="P:MMEdit.PluginBase.Name">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IPlugin.Name"/>
+            </summary>
+        </member>
+        <member name="P:MMEdit.PluginBase.Version">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IPlugin.Version"/>
+            </summary>
+        </member>
+        <member name="P:MMEdit.PluginBase.Description">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IPlugin.Description"/>
+            </summary>
+        </member>
+        <member name="P:MMEdit.PluginBase.Host">
+            <summary>
+            获取或设置插件宿主。
+            </summary>
+        </member>
+        <member name="M:MMEdit.PluginBase.Initialize(MMEdit.IHost)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IHostConncet.Initialize(MMEdit.IHost)"/>
+            </summary>
+            <param name="host"></param>
+        </member>
+        <member name="M:MMEdit.PluginBase.Dispose(System.Boolean)">
+            <summary>
+            <inheritdoc cref="M:System.IDisposable.Dispose"/>
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:MMEdit.PluginBase.Finalize">
+            <summary>
+            析构函数。
+            </summary>
+        </member>
+        <member name="M:MMEdit.PluginBase.Dispose">
+            <summary>
+            <inheritdoc cref="M:System.IDisposable.Dispose"/>
+            </summary>
+        </member>
+        <member name="T:MMEdit.PluginEventArgs">
+            <summary>
+            为插件事件提供数据。
+            </summary>
+        </member>
+        <member name="M:MMEdit.PluginEventArgs.#ctor(MMEdit.IPlugin)">
+            <summary>
+            初始化 <see cref="T:MMEdit.PluginEventArgs"/> 类的新实例。
+            </summary>
+            <param name="plugin">引发事件的插件。</param>
+        </member>
+        <member name="P:MMEdit.PluginEventArgs.Plugin">
+            <summary>
+            获取引发事件的插件。
+            </summary>
+        </member>
+        <member name="T:MMEdit.PluginLoadException">
+            <summary>
+            加载插件时引发的异常。
+            </summary>
+        </member>
+        <member name="M:MMEdit.PluginLoadException.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.PluginLoadException"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.PluginLoadException.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.PluginLoadException.#ctor"/>
+            </summary>
+            <param name="message">解释异常原因的错误消息。</param>
+        </member>
+        <member name="M:MMEdit.PluginLoadException.#ctor(System.String,System.Exception)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.PluginLoadException.#ctor"/>
+            </summary>
+            <param name="message">解释异常原因的错误消息。</param>
+            <param name="inner">导致当前异常的异常。</param>
+        </member>
+        <member name="M:MMEdit.PluginLoadException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.PluginLoadException.#ctor"/>
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:MMEdit.IStartPlugin">
+            <summary>
+            提供启动控件。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IStartPlugin.CreateControl">
+            <summary>
+            创建启动控件。
+            </summary>
+        </member>
+        <member name="T:MMEdit.IWidget">
+            <summary>
+            表示小部件信息。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IWidget.Name">
+            <summary>
+            获取小部件的名称。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IWidget.WidgetID">
+            <summary>
+            获取小部件的 ID。
+            </summary>
+        </member>
+        <member name="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)">
+            <summary>
+            为可编辑对象创建 <see cref="T:MMEdit.IWidgetControl"/> 的新实例。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.WidgetClass">
+            <summary>
+            提供小部件的注册类，此类不可被继承。
+            </summary>
+        </member>
+        <member name="M:MMEdit.WidgetClass.#ctor(System.String,System.Func{MMEdit.ObjectFX,MMEdit.IWidgetControl})">
+            <summary>
+            初始化 <see cref="T:MMEdit.WidgetClass"/> 类的新实例。
+            </summary>
+            <param name="widgetID">小部件的 ID。</param>
+            <param name="createWidget">创建小部件方法。</param>
+        </member>
+        <member name="M:MMEdit.WidgetClass.#ctor(System.String,System.String,System.Func{MMEdit.ObjectFX,MMEdit.IWidgetControl})">
+            <summary>
+            <inheritdoc cref="M:MMEdit.WidgetClass.#ctor(System.String,System.Func{MMEdit.ObjectFX,MMEdit.IWidgetControl})"/>
+            </summary>
+            <param name="name">小部件的名称。</param>
+            <param name="widgetID">小部件的 ID。</param>
+            <param name="createWidget">创建小部件方法。</param>
+        </member>
+        <member name="P:MMEdit.WidgetClass.WidgetID">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IWidget.WidgetID"/>
+            </summary>
+        </member>
+        <member name="P:MMEdit.WidgetClass.Name">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IWidget.Name"/>
+            </summary>
+        </member>
+        <member name="M:MMEdit.WidgetClass.CreateWidget(MMEdit.ObjectFX)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.IWidget.CreateWidget(MMEdit.ObjectFX)"/>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MMEdit.IWidgetControl">
+            <summary>
+            表示小部件控件。
+            </summary>
+        </member>
+        <member name="P:MMEdit.IWidgetControl.ObjectFX">
+            <summary>
+            获取或设置可编辑对象。
+            </summary>
+        </member>
+        <member name="T:MMEdit.ObjectFX">
+            <summary>
+            表示可编辑对象，这是所有可编辑对象的最终基类。
+            </summary>
+        </member>
+        <member name="M:MMEdit.ObjectFX.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.ObjectFX"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.ObjectFX.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.ObjectFX.#ctor"/>
+            </summary>
+            <param name="widgetID">编辑此对象的小部件 WidgetID。</param>
+        </member>
+        <member name="P:MMEdit.ObjectFX.WidgetID">
+            <summary>
+            获取或设置编辑此对象的小部件 WidgetID。
+            </summary>
+        </member>
+        <member name="P:MMEdit.ObjectFX.Data">
+            <summary>
+            获取有关对象的其他用户定义信息的键/值对集合。
+            </summary>
+        </member>
+        <member name="E:MMEdit.ObjectFX.StatusChanged">
+            <summary>
+            <inheritdoc cref="E:MMEdit.INotifyStatusChanged.StatusChanged"/>
+            </summary>
+        </member>
+        <member name="M:MMEdit.ObjectFX.OnStatusChanged(MMEdit.FileStatus)">
+            <summary>
+            通知对象状态已改变。
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="T:MMEdit.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.cross_circle">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.cross_white">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.exclamation">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.exclamation_circle">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.exclamation_white">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.information">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.information_white">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.question">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:MMEdit.Properties.Resources.question_white">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:MMEdit.WidgetControl">
+            <summary>
+            小部件控件的基类，实现 <see cref="T:MMEdit.IWidgetControl"/>。
+            </summary>
+        </member>
+        <member name="M:MMEdit.WidgetControl.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.WidgetControl"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="P:MMEdit.WidgetControl.ObjectFX">
+            <summary>
+            <inheritdoc cref="P:MMEdit.IWidgetControl.ObjectFX"/>
+            </summary>
+        </member>
+        <member name="T:MMEdit.MessageWidget">
+            <summary>
+            消息小部件。
+            </summary>
+        </member>
+        <member name="M:MMEdit.MessageWidget.#ctor">
+            <summary>
+            初始化 <see cref="T:MMEdit.MessageWidget"/> 类的新实例。
+            </summary>
+        </member>
+        <member name="M:MMEdit.MessageWidget.#ctor(System.String)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.MessageWidget.#ctor"/>
+            </summary>
+            <param name="message">要显示的消息。</param>
+        </member>
+        <member name="M:MMEdit.MessageWidget.#ctor(System.String,System.Windows.Forms.MessageBoxIcon)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.MessageWidget.#ctor"/>
+            </summary>
+            <param name="message">要显示的消息。</param>
+            <param name="icon">要显示的图标。</param>
+        </member>
+        <member name="M:MMEdit.MessageWidget.#ctor(System.Exception)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.MessageWidget.#ctor"/>
+            </summary>
+            <param name="exception">要显示的异常。</param>
+        </member>
+        <member name="M:MMEdit.MessageWidget.#ctor(System.Exception,System.Windows.Forms.LinkLabelLinkClickedEventHandler)">
+            <summary>
+            <inheritdoc cref="M:MMEdit.MessageWidget.#ctor"/>
+            </summary>
+            <param name="exception">要显示的异常。</param>
+            <param name="onLinkClicked">单击“More”时引发 <see cref="E:System.Windows.Forms.LinkLabel.LinkClicked"/> 事件的事件处理程序。</param>
+        </member>
+        <member name="P:MMEdit.MessageWidget.Exception">
+            <summary>
+            获取或设置与此控件关联的异常。
+            </summary>
+        </member>
+        <member name="P:MMEdit.MessageWidget.Text">
+            <summary>
+            <inheritdoc cref="P:System.Windows.Forms.Control.Text"/>
+            </summary>
+        </member>
+        <member name="F:MMEdit.MessageWidget.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:MMEdit.MessageWidget.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:MMEdit.MessageWidget.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要修改
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+    </members>
+</doc>

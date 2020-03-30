@@ -1,11 +1,10 @@
 ﻿using MMEdit;
-using MMEdit.Fx;
-using MMEdit.Widgets;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Windows.Forms;
 
-namespace MMDUI.Widgets
+namespace MMEffectUI.Widgets
 {
     public class WidgetProxy : WidgetControl
     {
@@ -13,8 +12,9 @@ namespace MMDUI.Widgets
         public WidgetProxy()
         {
             AutoScroll = true;
-            Dock = System.Windows.Forms.DockStyle.Fill;
-            Padding = new System.Windows.Forms.Padding(10);
+            Dock = DockStyle.Fill;
+            Padding = new Padding(10);
+            DoubleBuffered = true;
         }
         public WidgetProxy(ObjectFX obj, IHost host) : this()
         {
@@ -35,36 +35,38 @@ namespace MMDUI.Widgets
             {
                 base.ObjectFX = value;
 
-                if (!(ObjectFX is MMDUIObjectFX))
-                    throw new Exception(Properties.Resources.WidgetProxy_IsNotMMDUIObjectFX);
+                if (!(ObjectFX is UIObjectFX))
+                    throw new Exception(Properties.Resources.Msg_IsNotUIObjectFX);
 
-                List<ControlObject> controlObjects = new List<ControlObject>((ObjectFX as MMDUIObjectFX).ControlObjects);
+                List<ControlObject> controlObjects = new List<ControlObject>((ObjectFX as UIObjectFX).ControlObjects);
                 controlObjects.Reverse();
 
                 new Thread(() =>
                 {
+                    while (!IsHandleCreated) { }
                     Invoke(new Action(() =>
                     {
                         SuspendLayout();
                         foreach (ControlObject controlObject in controlObjects)
                         {
-                            Annotation ann = controlObject.GetAnnotation("UIWidget");
+                            ControlObject UIWidget = controlObject.GetControlObject("UIWidget");
 
-                            if (ann != null)
+                            if (UIWidget != null)
                             {
-                                WidgetControl widget;
+                                Control widget;
                                 try
                                 {
-                                    widget = Host.CreateWidget(ann.Value, controlObject) ?? new MessageWidget($"{controlObject.Name}: 没有找到小部件“{ann.Value}”。");
+                                    widget = Host.CreateWidget<Control>(UIWidget.Value,controlObject) ?? new MessageWidget(string.Format(Properties.Resources.Msg_WidgetNotFound, UIWidget.Value));
                                 }
                                 catch (Exception e)
                                 {
-                                    widget = new MessageWidget($"{controlObject.Name}: {e.Message}");
+                                    widget = new MessageWidget($"{controlObject.Name}: {e.Message}", MessageBoxIcon.Warning);
                                 }
 
-                                if (widget is MMDUIWidgetBase widgetBase)
+                                if (widget is UIWidgetBase widgetBase)
+                                {
                                     widgetBase.ValueChanged += Widget_ValueChanged;
-
+                                }
                                 Controls.Add(widget);
                             }
                         }
@@ -73,14 +75,13 @@ namespace MMDUI.Widgets
                 }).Start();
             }
         }
-
         protected IHost Host { get; }
         #endregion
 
         #region Methods
         private void Widget_ValueChanged(object sender, EventArgs e)
         {
-            Host.OnFileStatusChanged(new FileStatusEventArgs(FileStatus.Changed));
+           ObjectFX.OnStatusChanged(FileStatus.Changed);
         }
         #endregion
     }

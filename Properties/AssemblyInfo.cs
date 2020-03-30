@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("MMDUI 扩展插件")]
-[assembly: AssemblyDescription("提供 MMDUI 格式的 MME 文件的导入、导出和小部件。")]
+[assembly: AssemblyTitle("MMEffectUI")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nicengi")]
-[assembly: AssemblyProduct("MMDUI 扩展插件")]
-[assembly: AssemblyCopyright("© 2020 Nicengi.")]
+[assembly: AssemblyProduct("MMEdit")]
+[assembly: AssemblyCopyright("© 2020 Nicengi。保留所有权利。")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.1.0")]
-[assembly: AssemblyFileVersion("0.1.1.0")]
+[assembly: AssemblyVersion("0.2.0.0")]
+[assembly: AssemblyFileVersion("0.2.0.0")]

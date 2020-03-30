@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace MMDUI.Widgets
+namespace MMEffectUI.Widgets
 {
-    public partial class NumericWidget : MMDUIWidgetBaseN
+    public partial class NumericWidget : UIWidgetBaseV
     {
         #region Fields
         private bool folded;
@@ -26,8 +26,8 @@ namespace MMDUI.Widgets
             numericZ.Visible = ControlObject.Type == "float3" || ControlObject.Type == "float4";
             numericA.Visible = ControlObject.Type == "float4";
             
-            labelUIName.Text = ControlObject.GetAnnotation("UIName")?.Value ?? ControlObject.Name;
-            toolTip.SetToolTip(labelUIName, ControlObject.GetAnnotation("UIHelp")?.Value);
+            labelUIName.Text = ControlObject.GetControlObject("UIName")?.Value ?? ControlObject.Name;
+            toolTip.SetToolTip(labelUIName, ControlObject.GetControlObject("UIHelp")?.Value);
 
             numericX.Maximum = Convert.ToDecimal(UIMaxX);
             numericY.Maximum = Convert.ToDecimal(UIMaxY);

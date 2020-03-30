@@ -1,15 +1,15 @@
 ﻿using MMEdit;
-using MMEdit.Fx;
 using System;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
-namespace MMDUI.Widgets
+namespace MMEffectUI.Widgets
 {
-    public class MMDUIWidgetBase : WidgetControl
+    public class UIWidgetBase : WidgetControl
     {
         #region Constructor
-        public MMDUIWidgetBase()
+        public UIWidgetBase()
         {
             Dock = DockStyle.Top;
         }
@@ -28,11 +28,11 @@ namespace MMDUI.Widgets
                 base.ObjectFX = value;
 
                 if (!(ObjectFX is ControlObject))
-                    throw new Exception(string.Format(Properties.Resources.MMDUIWidgetBase_IsNotControlObject, Name));
+                    throw new Exception(string.Format(Properties.Resources.Msg_IsNotControlObject, Name));
 
                 ControlObject = (ControlObject)ObjectFX;
 
-                string UIVisible = ControlObject.GetAnnotation("UIVisible")?.Value;
+                string UIVisible = ControlObject.GetControlObject("UIVisible")?.Value;
                 switch (UIVisible)
                 {
                     default:
@@ -53,7 +53,7 @@ namespace MMDUI.Widgets
 
         #region Events
         /// <summary>
-        /// 在 <see cref="MMDUIWidgetBase.ControlObject"/>.Value 属性的值被改变时发生。
+        /// 在 <see cref="UIWidgetBase.ControlObject"/>.Value 属性的值被改变时发生。
         /// </summary>
         public event EventHandler ValueChanged;
 
@@ -77,7 +77,7 @@ namespace MMDUI.Widgets
     /// <summary>
     /// 提供编辑值类型（int，float，float2，float3，float4）的小部件基类。
     /// </summary>
-    public class MMDUIWidgetBaseN : MMDUIWidgetBase
+    public class UIWidgetBaseV : UIWidgetBase
     {
         #region Fields
         private string _ValueX = "0";
@@ -92,6 +92,14 @@ namespace MMDUI.Widgets
         private string _UIMinY = "0";
         private string _UIMinZ = "0";
         private string _UIMinA = "0";
+        private System.Threading.Timer timer;
+        #endregion
+
+        #region Constructor
+        public UIWidgetBaseV()
+        {
+            timer = new System.Threading.Timer(new TimerCallback(OnUpdateValue), null, Timeout.Infinite, Timeout.Infinite);
+        }
         #endregion
 
         #region Properties
@@ -219,7 +227,7 @@ namespace MMDUI.Widgets
         #region Methods
         protected override void UpdateControlObject()
         {
-            Annotation UIMax = ControlObject.GetAnnotation("UIMax");
+            ControlObject UIMax = ControlObject.GetControlObject("UIMax");
             if (UIMax != null)
             {
                 switch (UIMax.Type)
@@ -265,7 +273,7 @@ namespace MMDUI.Widgets
                 }
             }
 
-            Annotation UIMin = ControlObject.GetAnnotation("UIMin");
+            ControlObject UIMin = ControlObject.GetControlObject("UIMin");
             if (UIMin != null)
             {
                 switch (UIMin.Type)
@@ -369,9 +377,15 @@ namespace MMDUI.Widgets
         }
 
         /// <summary>
-        /// 更新 <see cref="MMDUIWidgetBase.ControlObject"/>.Value 属性的值，并引发 <see cref="MMDUIWidgetBase.ValueChanged"/> 事件。
+        /// 更新 <see cref="UIWidgetBase.ControlObject"/>.Value 属性的值，并引发 <see cref="UIWidgetBase.ValueChanged"/> 事件。
         /// </summary>
         protected void UpdateValue()
+        {
+            timer.Change(75, Timeout.Infinite);
+            OnValueChanged();
+        }
+
+        private void OnUpdateValue(object state)
         {
             switch (ControlObject.Type)
             {
@@ -390,8 +404,6 @@ namespace MMDUI.Widgets
                     ControlObject.Value = $"float4({ValueX}, {ValueY}, {ValueZ}, {ValueA})";
                     break;
             }
-
-            OnValueChanged();
         }
         #endregion
     }

@@ -117,22 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>关于</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="color_adjustment" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\color-adjustment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="color_adjustment_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\color-adjustment-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="color_adjustment_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\color-adjustment-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="color_swatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\color-swatch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,85 +127,31 @@
   <data name="function" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\images\function.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IO.Caption" xml:space="preserve">
-    <value>MMDUI 文件</value>
+  <data name="mme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\mme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IO.Description" xml:space="preserve">
-    <value>提供 MMDUI 格式的 MME 文件的导入/导出程序。\r\n支持的类型：int / float / float2 / float3 / float4</value>
+  <data name="MMEffectUI.Caption" xml:space="preserve">
+    <value>效果文件</value>
   </data>
-  <data name="IO.FormatException" xml:space="preserve">
-    <value>无法导入“{1}”，因为它不是 MMDUI 格式。</value>
+  <data name="MMEffectUI.Name" xml:space="preserve">
+    <value>MMEffect UI</value>
   </data>
-  <data name="IO.Name" xml:space="preserve">
-    <value>MMDUI Format Import/Export</value>
+  <data name="Msg.FormatException" xml:space="preserve">
+    <value>无法导入“{1}”。</value>
   </data>
-  <data name="Menu.menuItem_Encoding" xml:space="preserve">
-    <value>编码(&amp;E)</value>
+  <data name="Msg.IsNotControlObject" xml:space="preserve">
+    <value>‘{0}’无法编辑此对象。</value>
   </data>
-  <data name="Menu.menuItem_Encoding_ANSI" xml:space="preserve">
-    <value>使用 &amp;ANSI 编码</value>
+  <data name="Msg.IsNotUIObjectFX" xml:space="preserve">
+    <value>无法创建小部件，提供的对象不是“{0}”。</value>
   </data>
-  <data name="Menu.menuItem_Encoding_Shift_JIS" xml:space="preserve">
-    <value>使用 &amp;Shift-JIS 编码</value>
-  </data>
-  <data name="Menu.menuItem_Encoding_UTF_8" xml:space="preserve">
-    <value>使用 &amp;UTF-8 编码</value>
-  </data>
-  <data name="Menu.menuItem_MMDUI" xml:space="preserve">
-    <value>MMDUI(&amp;M)</value>
-  </data>
-  <data name="Menu.menuItem_MMDUI_About" xml:space="preserve">
-    <value>关于 MMDUI(&amp;A)</value>
-  </data>
-  <data name="Menu.Name" xml:space="preserve">
-    <value>MMDUI Menu</value>
-  </data>
-  <data name="MMDUIWidgetBase.IsNotControlObject" xml:space="preserve">
-    <value>{0}：无法编辑此对象。</value>
+  <data name="Msg.WidgetNotFound" xml:space="preserve">
+    <value>没有找到小部件“{0}”。</value>
   </data>
   <data name="ui_color_picker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\ui-color-picker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ui_color_picker_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-color-picker-default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ui_color_picker_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\ui-color-picker-transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider_050" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider-050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider_vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider-vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider_vertical_050" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider-vertical-050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_slider_vertical_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-slider-vertical-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ui_spin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ui-spin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Version" xml:space="preserve">
-    <value>版本</value>
-  </data>
-  <data name="WidgetProvider.Description" xml:space="preserve">
-    <value>提供基本的 MMDUI 小部件。\r\n小部件：Color / Numeric / Slider / Spinner</value>
-  </data>
-  <data name="WidgetProvider.Name" xml:space="preserve">
-    <value>Widget Provider</value>
-  </data>
-  <data name="WidgetProxy.IsNotMMDUIObjectFX" xml:space="preserve">
-    <value>Widget Proxy: 无法创建小部件，提供的对象不是“MMDUIObjectFX”。</value>
   </data>
 </root>
